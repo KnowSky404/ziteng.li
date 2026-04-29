@@ -5,9 +5,9 @@ function ProjectsSection({ projects }) {
   return (
     <section className="section-block" id="projects">
       <SectionHeading
-        eyebrow="Selected Work"
-        title="Selected Projects"
-        description="A quick-scan collection of products, experiments, and systems that reflect how I build."
+        eyebrow="Projects"
+        title="Pinned Projects"
+        description="A GitHub-style selection of products, systems, and experiments that reflect the way I build and ship."
       />
 
       <div className="card-grid">

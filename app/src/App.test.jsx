@@ -1,17 +1,29 @@
 import { render, screen } from '@testing-library/react'
 import App from './App'
 
-test('renders the core homepage sections for the personal site', () => {
+test('renders the GitHub-inspired homepage structure', () => {
   render(<App />)
 
   expect(
-    screen.getByRole('heading', { name: /independent developer/i }),
+    screen.getByRole('navigation', { name: /primary/i }),
   ).toBeInTheDocument()
   expect(
-    screen.getByRole('heading', { name: /selected projects/i }),
+    screen.getByRole('complementary', { name: /profile summary/i }),
   ).toBeInTheDocument()
   expect(
-    screen.getByRole('heading', { name: /online services/i }),
+    screen.getByRole('heading', { name: /independent developer building on the web/i }),
+  ).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: /overview/i }),
+  ).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: /pinned projects/i }),
+  ).toBeInTheDocument()
+  expect(
+    screen.getByRole('heading', { name: /public services/i }),
+  ).toBeInTheDocument()
+  expect(
+    screen.getByRole('link', { name: /view github profile/i }),
   ).toBeInTheDocument()
 
   expect(screen.getAllByTestId('project-card').length).toBeGreaterThan(2)

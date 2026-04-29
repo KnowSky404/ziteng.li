@@ -1,9 +1,9 @@
 export const heroContent = {
   eyebrow: 'Ziteng Li',
   name: 'Building thoughtful digital products with a human point of view.',
-  role: 'Independent Developer',
+  role: 'Independent developer building on the web.',
   summary:
-    'I make software, tools, and small internet experiences that feel clear, useful, and quietly memorable.',
+    'I build software, tools, and small internet products with a bias toward clarity, maintainability, and developer-friendly interfaces.',
   signals: ['Product-minded systems', 'AI-assisted tools', 'Small web experiences'],
 }
 

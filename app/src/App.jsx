@@ -11,17 +11,42 @@ import {
   socialLinks,
 } from './data/siteContent'
 
+const navigationItems = [
+  { label: 'Overview', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Services', href: '#services' },
+]
+
 function App() {
   return (
-    <>
-      <HeroSection content={heroContent} />
-      <main>
-        <AboutSection items={aboutItems} />
-        <ProjectsSection projects={projects} />
-        <OnlineServicesSection services={onlineServices} />
+    <div className="site-shell">
+      <header className="site-header">
+        <div className="site-header__brand">
+          <span className="site-header__mark" aria-hidden="true">
+            ZL
+          </span>
+          <span className="site-header__title">ziteng.li</span>
+        </div>
+
+        <nav aria-label="Primary" className="site-header__nav">
+          {navigationItems.map((item) => (
+            <a href={item.href} key={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </header>
+
+      <main className="site-main">
+        <HeroSection content={heroContent} links={socialLinks} />
+        <div className="content-column">
+          <AboutSection items={aboutItems} />
+          <ProjectsSection projects={projects} />
+          <OnlineServicesSection services={onlineServices} />
+        </div>
       </main>
       <FooterSection links={socialLinks} />
-    </>
+    </div>
   )
 }
 

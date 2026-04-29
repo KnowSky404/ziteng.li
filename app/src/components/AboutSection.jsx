@@ -4,9 +4,9 @@ function AboutSection({ items }) {
   return (
     <section className="section-block" id="about">
       <SectionHeading
-        eyebrow="Who I Am"
-        title="A calm place for the work behind the screen."
-        description="A short editorial snapshot of how I think, build, and choose what is worth putting on the internet."
+        eyebrow="Overview"
+        title="Overview"
+        description="A quick summary of the product, engineering, and interface principles behind the work on this site."
       />
 
       <div className="about-grid">
