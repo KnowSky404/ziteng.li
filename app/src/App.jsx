@@ -181,6 +181,18 @@ function App() {
       </header>
 
       <main className="site-main" data-resolved-theme={resolvedTheme}>
+        <nav aria-label="Mobile sections" className="mobile-section-nav">
+          {navigationItems.map((item) => (
+            <a
+              aria-label={`Go to ${item.label}`}
+              href={item.href}
+              key={`mobile-${item.href}`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
         <HeroSection content={heroContent} links={socialLinks} />
         <div className="content-column">
           <AboutSection items={aboutItems} />

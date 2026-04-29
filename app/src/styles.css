@@ -222,6 +222,12 @@ section {
   padding: 24px;
 }
 
+.hero-mobile-topline,
+.hero-mobile-summary {
+  display: grid;
+  gap: 16px;
+}
+
 .profile-sidebar {
   align-self: start;
 }
@@ -433,6 +439,10 @@ h3 {
   margin-top: 24px;
 }
 
+.mobile-section-nav {
+  display: none;
+}
+
 .content-column {
   display: grid;
   gap: 24px;
@@ -547,38 +557,146 @@ h3 {
 @media (max-width: 900px) {
   .site-shell {
     width: min(var(--max-width), calc(100% - 20px));
-    padding-top: 16px;
+    padding-top: 12px;
   }
 
   .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 12px;
+    min-height: auto;
+    padding: 10px 12px;
+    align-items: stretch;
   }
 
   .site-header__nav {
+    display: none;
     margin-left: 0;
   }
 
   .site-header__utilities {
     width: 100%;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .site-main {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mobile-section-nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-top: -4px;
+    padding: 2px 0 2px 2px;
+    scrollbar-width: none;
+  }
+
+  .mobile-section-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-section-nav a {
+    flex: 0 0 auto;
+    padding: 9px 14px;
+    border: 1px solid var(--border-default);
+    border-radius: 999px;
+    background: var(--bg-subtle);
+    color: var(--text-default);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .profile-sidebar {
+    order: 2;
+  }
+
+  .hero-shell {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .hero-mobile-topline {
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+  }
+
+  .hero-mobile-summary {
+    gap: 10px;
   }
 
   .hero-profile__avatar {
-    max-width: 144px;
+    max-width: 88px;
   }
 
   .about-grid,
   .card-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
   }
 
   .section-block {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .content-column {
+    gap: 16px;
+  }
+
+  .hero-name {
+    font-size: 1.2rem;
+  }
+
+  .hero-handle {
+    font-size: 0.92rem;
+  }
+
+  h1 {
+    font-size: 1.45rem;
+    line-height: 1.18;
+  }
+
+  .hero-summary,
+  .section-copy {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions--stacked {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-highlights {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .hero-highlight-card,
+  .about-card,
+  .showcase-card {
+    padding: 16px;
+  }
+
+  .showcase-card {
+    gap: 12px;
+  }
+
+  .card-meta {
+    gap: 6px;
+  }
+
+  .card-meta span,
+  .hero-signals li,
+  .tag-list li {
+    font-size: 0.74rem;
+  }
+
+  .hero-signals,
+  .tag-list {
+    gap: 6px;
   }
 
   .site-footer {

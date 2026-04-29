@@ -5,17 +5,21 @@ function HeroSection({ content, links }) {
   return (
     <aside className="profile-sidebar" aria-label="Profile summary">
       <div className="hero-shell">
-        <div className="hero-profile__avatar" aria-hidden="true">
-          <span>ZL</span>
-        </div>
-        <div className="hero-profile__meta">
-          <p className="hero-name">{content.eyebrow}</p>
-          <span className="hero-handle">@knowsky404</span>
-        </div>
+        <div className="hero-mobile-topline">
+          <div className="hero-profile__avatar" aria-hidden="true">
+            <span>ZL</span>
+          </div>
+          <div className="hero-mobile-summary">
+            <div className="hero-profile__meta">
+              <p className="hero-name">{content.eyebrow}</p>
+              <span className="hero-handle">@knowsky404</span>
+            </div>
 
-        <div className="hero-copy">
-          <h1 id="hero-title">{content.role}</h1>
-          <p className="hero-summary">{content.summary}</p>
+            <div className="hero-copy">
+              <h1 id="hero-title">{content.role}</h1>
+              <p className="hero-summary">{content.summary}</p>
+            </div>
+          </div>
         </div>
 
         <div className="hero-actions hero-actions--stacked">

@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import App from './App'
 
 test('renders the GitHub-inspired homepage structure', () => {
@@ -47,4 +47,21 @@ test('switches to dark theme when the dark control is pressed', () => {
   fireEvent.click(screen.getByRole('button', { name: /use dark theme/i }))
 
   expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
+})
+
+test('renders the mobile section navigation entry points', () => {
+  render(<App />)
+
+  const mobileNav = screen.getByRole('navigation', { name: /mobile sections/i })
+
+  expect(mobileNav).toBeInTheDocument()
+  expect(
+    within(mobileNav).getByRole('link', { name: /go to overview/i }),
+  ).toBeInTheDocument()
+  expect(
+    within(mobileNav).getByRole('link', { name: /go to projects/i }),
+  ).toBeInTheDocument()
+  expect(
+    within(mobileNav).getByRole('link', { name: /go to services/i }),
+  ).toBeInTheDocument()
 })
