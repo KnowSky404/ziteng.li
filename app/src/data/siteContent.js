@@ -9,93 +9,103 @@ export const heroContent = {
 
 export const aboutItems = [
   {
-    title: 'How I work',
+    title: 'About this profile',
     description:
-      'I prefer simple structures, clear language, and interfaces that feel intentional rather than noisy.',
+      'Independent builder working under the KnowSky404 handle, focused on small web products, polished interfaces, and practical tools that stay understandable after launch.',
+    points: [
+      'Shipping personal tools and public-facing websites',
+      'Preferring clear product structure over novelty-heavy UI',
+      'Using AI workflows where they improve speed, not noise',
+    ],
   },
   {
-    title: 'What I build',
+    title: 'Current focus',
     description:
-      'Most of my work lives between product experiments, developer tools, and public-facing websites that solve focused problems.',
+      'The current test data is generated from public identity cues around KnowSky404, including this personal site and the Puretools reference direction.',
+    points: [
+      'A GitHub-inspired personal homepage',
+      'Theme and language-ready interface architecture',
+      'Mobile-first navigation and cleaner content hierarchy',
+    ],
   },
   {
-    title: 'What I value',
+    title: 'README note',
     description:
-      'I care about taste, maintainability, and whether a product still feels understandable after the novelty wears off.',
+      'This section is intentionally formatted more like a profile README than a landing-page feature grid. The goal is to make the right column feel authored, technical, and personal at the same time.',
   },
 ]
 
 export const projects = [
   {
-    name: 'Pulseboard',
+    name: 'KnowSky404/ziteng.li',
     description:
-      'A compact dashboard for turning scattered product signals into a single daily operating view.',
+      'The personal homepage repository used to test GitHub-like layout language, theme switching, bilingual readiness, and mobile-first navigation.',
     year: '2026',
-    status: 'Product',
-    tags: ['React', 'Analytics', 'Design Systems'],
-    href: 'https://example.com/pulseboard',
+    status: 'Pinned',
+    tags: ['React', 'Vite', 'GitHub Pages'],
+    href: 'https://github.com/KnowSky404/ziteng.li',
   },
   {
-    name: 'Prompt Field Notes',
+    name: 'KnowSky404/puretools',
     description:
-      'A private knowledge workspace for testing, annotating, and refining AI prompt workflows.',
+      'A utilities-oriented product direction used here as a reference for cleaner white layouts, practical interfaces, and faster user entry points.',
     year: '2025',
-    status: 'Experiment',
-    tags: ['LLM UX', 'Content Model', 'Workflow'],
-    href: 'https://example.com/prompt-field-notes',
+    status: 'Reference',
+    tags: ['Product UI', 'Utilities', 'Navigation'],
+    href: 'https://puretools.knowsky404.com/',
   },
   {
-    name: 'Quiet Forms',
+    name: 'KnowSky404/profile-readme-lab',
     description:
-      'A minimal form toolkit designed for small teams that want better defaults without heavyweight overhead.',
+      'A profile-readme style test direction for experimenting with authored sections, GitHub-like hierarchy, and lighter personal branding.',
     year: '2025',
-    status: 'System',
-    tags: ['UI', 'Accessibility', 'Frontend'],
-    href: 'https://example.com/quiet-forms',
+    status: 'Concept',
+    tags: ['README', 'Profile', 'Content Design'],
+    href: 'https://github.com/KnowSky404',
   },
   {
-    name: 'Signal Atlas',
+    name: 'KnowSky404/mobile-ui-notes',
     description:
-      'An internal map of product ideas, launch notes, and iteration paths used to compare concepts over time.',
+      'A placeholder repository direction representing mobile-first layout decisions, spacing cleanup, and scan-friendly card systems.',
     year: '2024',
-    status: 'Research',
-    tags: ['Research', 'Visualization', 'Product Strategy'],
-    href: 'https://example.com/signal-atlas',
+    status: 'Experiment',
+    tags: ['Mobile UI', 'CSS', 'Interaction'],
+    href: 'https://github.com/KnowSky404',
   },
 ]
 
 export const onlineServices = [
   {
-    name: 'Linkroom',
+    name: 'Puretools',
     description:
-      'A public utility page for collecting and sharing focused sets of links around a topic or project.',
-    kind: 'Tool',
+      'A clean public-facing tools experience and the closest existing visual reference for where this site can become more product-like without losing clarity.',
+    kind: 'Reference Site',
     state: 'Live',
     action: 'Open site',
-    href: 'https://example.com/linkroom',
+    href: 'https://puretools.knowsky404.com/',
   },
   {
-    name: 'Readability Lab',
+    name: 'GitHub Profile Direction',
     description:
-      'A browser-based tool for checking hierarchy, spacing rhythm, and legibility in quick interface drafts.',
-    kind: 'Web App',
-    state: 'Public',
-    action: 'Try tool',
-    href: 'https://example.com/readability-lab',
+      'A test entry representing the authored README-style direction used to reshape the desktop right column into something closer to a GitHub profile.',
+    kind: 'Design Track',
+    state: 'Planned',
+    action: 'View profile',
+    href: 'https://github.com/KnowSky404',
   },
   {
-    name: 'Micro Launch Pages',
+    name: 'Homepage Preview Stack',
     description:
-      'A set of lightweight public pages used to test positioning, messaging, and early product intent.',
-    kind: 'Site',
-    state: 'Open',
-    action: 'Visit collection',
-    href: 'https://example.com/micro-launch-pages',
+      'A placeholder service entry for testing deploy flow, content hierarchy changes, and public presentation of ongoing homepage iterations.',
+    kind: 'Preview',
+    state: 'Active',
+    action: 'Open preview',
+    href: 'https://knowsky404.github.io/ziteng.li/',
   },
 ]
 
 export const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/' },
+  { label: 'GitHub', href: 'https://github.com/KnowSky404' },
   { label: 'Email', href: 'mailto:hello@example.com' },
-  { label: 'X', href: 'https://x.com/' },
+  { label: 'X', href: 'https://x.com/KnowSky404' },
 ]

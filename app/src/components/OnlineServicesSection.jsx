@@ -5,9 +5,9 @@ function OnlineServicesSection({ services }) {
   return (
     <section className="section-block" id="services">
       <SectionHeading
-        eyebrow="Services"
-        title="Public Services"
-        description="Live tools and web experiences that are available to open, test, and use right now."
+        eyebrow="Links And Services"
+        title="Elsewhere"
+        description="Public links and live references that support the profile-readme style overview."
       />
 
       <div className="card-grid services-grid">

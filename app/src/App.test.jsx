@@ -14,13 +14,13 @@ test('renders the GitHub-inspired homepage structure', () => {
     screen.getByRole('heading', { name: /independent developer building on the web/i }),
   ).toBeInTheDocument()
   expect(
-    screen.getByRole('heading', { name: /overview/i }),
+    screen.getByRole('heading', { name: /^readme$/i }),
   ).toBeInTheDocument()
   expect(
-    screen.getByRole('heading', { name: /pinned projects/i }),
+    screen.getByRole('heading', { name: /^pinned$/i }),
   ).toBeInTheDocument()
   expect(
-    screen.getByRole('heading', { name: /public services/i }),
+    screen.getByRole('heading', { name: /elsewhere/i }),
   ).toBeInTheDocument()
   expect(
     screen.getByRole('link', { name: /view github profile/i }),

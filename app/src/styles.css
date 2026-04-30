@@ -448,6 +448,51 @@ h3 {
   gap: 24px;
 }
 
+.readme-shell {
+  display: grid;
+  gap: 18px;
+}
+
+.readme-intro {
+  display: grid;
+  gap: 10px;
+  padding: 4px 0 2px;
+}
+
+.readme-intro p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-default);
+}
+
+.readme-grid {
+  margin-top: 0;
+}
+
+.readme-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.readme-list li + li {
+  margin-top: 6px;
+}
+
+.readme-codeblock {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  background: var(--bg-inset);
+  color: var(--text-default);
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
 .section-block {
   padding: 24px;
 }
@@ -502,6 +547,10 @@ h3 {
   gap: 14px;
   align-content: start;
   padding: 20px;
+}
+
+.readme-grid .about-card {
+  gap: 12px;
 }
 
 .showcase-card:hover,
@@ -636,6 +685,15 @@ h3 {
     grid-template-columns: 1fr;
     gap: 12px;
     margin-top: 16px;
+  }
+
+  .readme-shell {
+    gap: 14px;
+  }
+
+  .readme-codeblock {
+    padding: 14px 16px;
+    font-size: 0.8rem;
   }
 
   .section-block {

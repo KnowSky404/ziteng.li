@@ -2,8 +2,8 @@ function ProjectCard({ project }) {
   return (
     <article className="showcase-card" data-testid="project-card">
       <div className="card-meta">
-        <span>{project.year}</span>
         <span>{project.status}</span>
+        <span>{project.year}</span>
       </div>
       <h3>
         <a href={project.href} target="_blank" rel="noreferrer">
@@ -17,7 +17,7 @@ function ProjectCard({ project }) {
         ))}
       </ul>
       <a className="button" href={project.href} target="_blank" rel="noreferrer">
-        View project
+        View repository
       </a>
     </article>
   )
