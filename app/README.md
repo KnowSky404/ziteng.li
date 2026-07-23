@@ -15,6 +15,32 @@ bun run dev
 bun run build
 ```
 
+## Deployment
+
+### Cloudflare Pages
+
+Connect the repository in Workers & Pages and use these Git build settings:
+
+- Production branch: `main`
+- Root directory: `app`
+- Build command: `bun run build`
+- Build output directory: `dist`
+- Pages project name: `ziteng-li`
+- Environment variable: `BUN_VERSION=1.3.14`
+
+The matching Wrangler source of truth is `wrangler.jsonc`. A manual deployment
+is also available after Cloudflare authentication:
+
+```bash
+bun run deploy:cloudflare
+```
+
+### GitHub Pages
+
+Set **Settings > Pages > Build and deployment > Source** to **GitHub Actions**.
+The repository workflow then builds and deploys `dist` on every push to `main`,
+or when started manually from the Actions tab.
+
 ## Where To Edit
 
 Most copy and card content lives in `src/data/siteContent.js`.

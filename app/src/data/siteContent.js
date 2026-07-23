@@ -1,3 +1,5 @@
+import { assetPath } from '../assetPath'
+
 const projectSources = [
   {
     id: 'sing-box-vps',
@@ -10,28 +12,28 @@ const projectSources = [
     name: 'SubMan',
     href: 'https://github.com/KnowSky404/SubMan',
     tags: ['SvelteKit', 'TypeScript', 'Cloudflare'],
-    image: '/media/subman.png',
+    image: assetPath('media/subman.png'),
   },
   {
     id: 'gist-ledger',
     name: 'gist-ledger',
     href: 'https://github.com/KnowSky404/gist-ledger',
     tags: ['React', 'TypeScript', 'GitHub Gist'],
-    image: '/media/gist-ledger.png',
+    image: assetPath('media/gist-ledger.png'),
   },
   {
     id: 'puretools',
     name: 'PureTools',
     href: 'https://github.com/KnowSky404/PureTools',
     tags: ['Svelte 5', 'TypeScript', 'Local-first'],
-    image: '/media/puretools.png',
+    image: assetPath('media/puretools.png'),
   },
   {
     id: 'n2api',
     name: 'N2API',
     href: 'https://github.com/KnowSky404/N2API',
     tags: ['Go', 'SvelteKit', 'PostgreSQL'],
-    image: '/media/n2api.png',
+    image: assetPath('media/n2api.png'),
   },
 ]
 

@@ -9,7 +9,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:cloudflare": "bun run build && wrangler pages deploy dist --project-name ziteng-li"
   },
   "dependencies": {
     "lucide-react": "^1.26.0",
@@ -29,6 +30,7 @@
     "globals": "^17.5.0",
     "jsdom": "^29.1.0",
     "vite": "^8.0.10",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.5",
+    "wrangler": "^4.113.0"
   }
 }

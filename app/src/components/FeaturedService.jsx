@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import { assetPath } from '../assetPath'
 
 function FeaturedService({ content, service }) {
   return (
@@ -11,7 +12,7 @@ function FeaturedService({ content, service }) {
           target="_blank"
         >
           <div className="featured-service__media">
-            <img alt={content.imageAlt} src="/media/puretools.png" />
+            <img alt={content.imageAlt} src={assetPath('media/puretools.png')} />
           </div>
           <div className="featured-service__caption">
             <div>

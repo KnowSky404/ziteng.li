@@ -1,4 +1,5 @@
 import { ArrowDownRight } from 'lucide-react'
+import { assetPath } from '../assetPath'
 
 function HeroSection({ content, quickNavigationLabel = 'Page shortcuts' }) {
   return (
@@ -10,7 +11,7 @@ function HeroSection({ content, quickNavigationLabel = 'Page shortcuts' }) {
             <p className="hero-section__role">{content.role}</p>
           </div>
           <figure className="hero-section__avatar">
-            <img alt={content.avatarAlt} src="/media/avatar.png" />
+            <img alt={content.avatarAlt} src={assetPath('media/avatar.png')} />
           </figure>
         </div>
 
