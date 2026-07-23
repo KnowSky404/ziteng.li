@@ -24,7 +24,7 @@ Connect the repository with Workers Builds and use these Git build settings:
 - Production branch: `main`
 - Root directory: `app`
 - Build command: `bun run build`
-- Deploy command: `npx wrangler deploy`
+- Deploy command: `bunx wrangler deploy`
 - Worker name: `ziteng-li`
 - Environment variable: `BUN_VERSION=1.3.14`
 

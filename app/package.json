@@ -10,7 +10,7 @@
     "test:watch": "vitest",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy:cloudflare": "bun run build && wrangler deploy"
+    "deploy:cloudflare": "bun run build && bunx wrangler deploy"
   },
   "dependencies": {
     "lucide-react": "^1.26.0",
