@@ -17,19 +17,20 @@ bun run build
 
 ## Deployment
 
-### Cloudflare Pages
+### Cloudflare Workers
 
-Connect the repository in Workers & Pages and use these Git build settings:
+Connect the repository with Workers Builds and use these Git build settings:
 
 - Production branch: `main`
 - Root directory: `app`
 - Build command: `bun run build`
-- Build output directory: `dist`
-- Pages project name: `ziteng-li`
+- Deploy command: `npx wrangler deploy`
+- Worker name: `ziteng-li`
 - Environment variable: `BUN_VERSION=1.3.14`
 
 The matching Wrangler source of truth is `wrangler.jsonc`. A manual deployment
-is also available after Cloudflare authentication:
+is also available after Cloudflare authentication. The command builds the Vite
+site before publishing its `dist` directory as Workers Static Assets:
 
 ```bash
 bun run deploy:cloudflare
