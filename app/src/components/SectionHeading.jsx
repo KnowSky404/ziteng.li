@@ -1,9 +1,13 @@
-function SectionHeading({ eyebrow, title, description }) {
+function SectionHeading({ description, index, title }) {
   return (
     <header className="section-heading">
-      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <h2>{title}</h2>
-      {description ? <p className="section-copy">{description}</p> : null}
+      <span aria-hidden="true" className="section-heading__index">
+        {index}
+      </span>
+      <div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
     </header>
   )
 }

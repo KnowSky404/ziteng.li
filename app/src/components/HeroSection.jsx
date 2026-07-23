@@ -1,64 +1,31 @@
-function HeroSection({ content, links }) {
-  const primaryLink = links.find((link) => link.label === 'GitHub') ?? links[0]
-  const secondaryLink = links.find((link) => link.label === 'Email') ?? links[1]
+import { ArrowDownRight } from 'lucide-react'
 
+function HeroSection({ content, quickNavigationLabel = 'Page shortcuts' }) {
   return (
-    <aside className="profile-sidebar" aria-label="Profile summary">
-      <div className="hero-shell">
-        <div className="hero-mobile-topline">
-          <div className="hero-profile__avatar" aria-hidden="true">
-            <span>ZL</span>
+    <section aria-labelledby="hero-title" className="hero-section" id="top">
+      <div className="page-container hero-section__inner">
+        <div className="hero-section__identity">
+          <div className="hero-section__copy">
+            <h1 id="hero-title">{content.name}</h1>
+            <p className="hero-section__role">{content.role}</p>
           </div>
-          <div className="hero-mobile-summary">
-            <div className="hero-profile__meta">
-              <p className="hero-name">{content.eyebrow}</p>
-              <span className="hero-handle">@knowsky404</span>
-            </div>
-
-            <div className="hero-copy">
-              <h1 id="hero-title">{content.role}</h1>
-              <p className="hero-summary">{content.summary}</p>
-            </div>
-          </div>
+          <figure className="hero-section__avatar">
+            <img alt={content.avatarAlt} src="/media/avatar.png" />
+          </figure>
         </div>
 
-        <div className="hero-actions hero-actions--stacked">
-          <a
-            className="button button--primary"
-            href={primaryLink?.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            View GitHub profile
-          </a>
-          <a
-            className="button"
-            href={secondaryLink?.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Contact me
-          </a>
-        </div>
+        <p className="hero-section__summary">{content.summary}</p>
 
-        <ul className="hero-signals" aria-label="focus areas">
-          {content.signals.map((signal) => (
-            <li key={signal}>{signal}</li>
+        <nav aria-label={quickNavigationLabel} className="hero-section__shortcuts">
+          {content.quickLinks.map((link) => (
+            <a href={link.href} key={link.href}>
+              <span>{link.label}</span>
+              <ArrowDownRight aria-hidden="true" size={18} strokeWidth={1.8} />
+            </a>
           ))}
-        </ul>
+        </nav>
       </div>
-
-      <div className="hero-highlights">
-        <div className="hero-highlight-card">
-          <span className="hero-highlight-card__label">Focus</span>
-          <strong>Product engineering with clean UX and maintainable systems.</strong>
-        </div>
-        <div className="hero-highlight-card">
-          <span className="hero-highlight-card__label">Status</span>
-          <strong>Open to shipping tools, experiments, and public web products.</strong>
-        </div>
-      </div>
-    </aside>
+    </section>
   )
 }
 

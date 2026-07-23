@@ -1,23 +1,30 @@
-function ProjectCard({ project }) {
+import { ArrowUpRight } from 'lucide-react'
+
+function ProjectCard({ action, index, project }) {
   return (
-    <article className="showcase-card" data-testid="project-card">
-      <div className="card-meta">
-        <span>{project.status}</span>
-        <span>{project.year}</span>
-      </div>
-      <h3>
-        <a href={project.href} target="_blank" rel="noreferrer">
-          {project.name}
-        </a>
-      </h3>
-      <p>{project.description}</p>
-      <ul className="tag-list" aria-label={`${project.name} technologies`}>
-        {project.tags.map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-      <a className="button" href={project.href} target="_blank" rel="noreferrer">
-        View repository
+    <article className="project-card" data-testid="project-card">
+      <a href={project.href} rel="noreferrer" target="_blank">
+        {project.image ? (
+          <div className="project-card__media">
+            <img
+              alt={`${project.name} interface preview`}
+              loading="lazy"
+              src={project.image}
+            />
+          </div>
+        ) : null}
+        <div className="project-card__body">
+          <div className="project-card__meta">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <span>{project.tags.join(' / ')}</span>
+          </div>
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <span className="project-card__action">
+            {action}
+            <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.8} />
+          </span>
+        </div>
       </a>
     </article>
   )

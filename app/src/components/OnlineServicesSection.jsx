@@ -1,19 +1,25 @@
 import SectionHeading from './SectionHeading'
 import ServiceCard from './ServiceCard'
 
-function OnlineServicesSection({ services }) {
+function OnlineServicesSection({ content, services }) {
   return (
-    <section className="section-block" id="services">
-      <SectionHeading
-        eyebrow="Links And Services"
-        title="Elsewhere"
-        description="Public links and live references that support the profile-readme style overview."
-      />
-
-      <div className="card-grid services-grid">
-        {services.map((service) => (
-          <ServiceCard key={service.name} service={service} />
-        ))}
+    <section className="content-section services-section" id="services">
+      <div className="page-container">
+        <SectionHeading
+          description={content.description}
+          index={content.index}
+          title={content.title}
+        />
+        <div className="service-directory">
+          {services.map((service, index) => (
+            <ServiceCard
+              action={content.action}
+              index={index}
+              key={service.id}
+              service={service}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
