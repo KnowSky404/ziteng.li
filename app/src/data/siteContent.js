@@ -31,6 +31,7 @@ const projectSources = [
     name: 'N2API',
     href: 'https://github.com/KnowSky404/N2API',
     tags: ['Go', 'SvelteKit', 'PostgreSQL'],
+    image: '/media/n2api.png',
   },
 ]
 
@@ -109,12 +110,9 @@ const copy = {
       mobileNavigation: '移动端导航',
       openMenu: '打开菜单',
       closeMenu: '关闭菜单',
-      theme: '主题偏好',
-      system: '跟随系统',
       light: '使用浅色主题',
       dark: '使用深色主题',
       switchLanguage: 'Switch to English',
-      languageShort: 'EN',
     },
     hero: {
       name: '李子腾',
@@ -200,12 +198,9 @@ const copy = {
       mobileNavigation: 'Mobile navigation',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',
-      theme: 'Theme preference',
-      system: 'Use system theme',
       light: 'Use light theme',
       dark: 'Use dark theme',
       switchLanguage: '切换到中文',
-      languageShort: '中',
     },
     hero: {
       name: 'Ziteng Li',

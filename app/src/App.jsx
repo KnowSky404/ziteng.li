@@ -91,7 +91,7 @@ function App() {
         content={content}
         onLanguageToggle={toggleLanguage}
         onThemeChange={setThemePreference}
-        themePreference={themePreference}
+        resolvedTheme={resolvedTheme}
       />
 
       <main id="main-content">

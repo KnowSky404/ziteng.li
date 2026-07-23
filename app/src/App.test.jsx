@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import App from './App'
 
 beforeEach(() => {
@@ -26,6 +26,12 @@ test('renders the Chinese personal homepage with all supplied projects and servi
   expect(screen.getAllByTestId('project-card')).toHaveLength(5)
   expect(screen.getAllByTestId('service-card')).toHaveLength(8)
 
+  screen.getAllByTestId('project-card').forEach((card) => {
+    const link = within(card).getByRole('link')
+    expect(link).toHaveAttribute('target', '_blank')
+    expect(link).toHaveAttribute('rel', 'noreferrer')
+  })
+
   expect(
     screen.getByRole('link', { name: /sing-box-vps/i }),
   ).toHaveAttribute('href', 'https://github.com/KnowSky404/sing-box-vps')
@@ -43,13 +49,18 @@ test('renders the Chinese personal homepage with all supplied projects and servi
   )
 })
 
-test('switches theme and persists the explicit preference', () => {
+test('toggles theme with one icon button and persists the explicit preference', () => {
   render(<App />)
 
   fireEvent.click(screen.getByRole('button', { name: '使用深色主题' }))
 
   expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
   expect(window.localStorage.getItem('ziteng.li.theme')).toBe('dark')
+
+  fireEvent.click(screen.getByRole('button', { name: '使用浅色主题' }))
+
+  expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+  expect(window.localStorage.getItem('ziteng.li.theme')).toBe('light')
 })
 
 test('switches the complete page copy to English and updates document language', () => {

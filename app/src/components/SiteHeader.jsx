@@ -1,34 +1,20 @@
-import { Languages, Menu, Monitor, Moon, Sun, X } from 'lucide-react'
+import { Languages, Menu, Moon, Sun, X } from 'lucide-react'
 import { useState } from 'react'
 
-const themeIcons = {
-  system: Monitor,
-  light: Sun,
-  dark: Moon,
-}
+function ThemeControl({ controls, onChange, resolvedTheme }) {
+  const nextTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
+  const Icon = nextTheme === 'dark' ? Moon : Sun
 
-function ThemeControl({ controls, onChange, value }) {
   return (
-    <div aria-label={controls.theme} className="theme-control" role="group">
-      {['system', 'light', 'dark'].map((option) => {
-        const Icon = themeIcons[option]
-
-        return (
-          <button
-            aria-label={controls[option]}
-            aria-pressed={value === option}
-            className="icon-button"
-            data-active={value === option ? 'true' : undefined}
-            key={option}
-            onClick={() => onChange(option)}
-            title={controls[option]}
-            type="button"
-          >
-            <Icon aria-hidden="true" size={17} strokeWidth={1.8} />
-          </button>
-        )
-      })}
-    </div>
+    <button
+      aria-label={controls[nextTheme]}
+      className="icon-button"
+      onClick={() => onChange(nextTheme)}
+      title={controls[nextTheme]}
+      type="button"
+    >
+      <Icon aria-hidden="true" size={17} strokeWidth={1.8} />
+    </button>
   )
 }
 
@@ -36,7 +22,7 @@ function SiteHeader({
   content,
   onLanguageToggle,
   onThemeChange,
-  themePreference,
+  resolvedTheme,
 }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const controls = content.controls
@@ -73,17 +59,16 @@ function SiteHeader({
           <ThemeControl
             controls={controls}
             onChange={onThemeChange}
-            value={themePreference}
+            resolvedTheme={resolvedTheme}
           />
           <button
             aria-label={controls.switchLanguage}
-            className="language-button"
+            className="icon-button"
             onClick={onLanguageToggle}
             title={controls.switchLanguage}
             type="button"
           >
             <Languages aria-hidden="true" size={17} strokeWidth={1.8} />
-            <span>{controls.languageShort}</span>
           </button>
           <button
             aria-expanded={menuOpen}
