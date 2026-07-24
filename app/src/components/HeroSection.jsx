@@ -16,6 +16,9 @@ function HeroSection({ content, quickNavigationLabel = 'Page shortcuts' }) {
         </div>
 
         <p className="hero-section__summary">{content.summary}</p>
+        <blockquote className="hero-section__signature">
+          <p>{content.signature}</p>
+        </blockquote>
 
         <nav aria-label={quickNavigationLabel} className="hero-section__shortcuts">
           {content.quickLinks.map((link) => (

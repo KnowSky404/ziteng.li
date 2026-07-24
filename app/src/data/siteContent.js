@@ -6,6 +6,7 @@ const projectSources = [
     name: 'sing-box-vps',
     href: 'https://github.com/KnowSky404/sing-box-vps',
     tags: ['Shell', 'sing-box', 'systemd'],
+    image: assetPath('media/sing-box-vps.png'),
   },
   {
     id: 'subman',
@@ -121,6 +122,8 @@ const copy = {
       role: 'AI 时代，被智能体鞭策的伪全栈开发者',
       summary:
         '在浏览器、终端与自托管基础设施之间，持续构建能真正用起来的产品、工具与服务。',
+      signature:
+        '隐于迷雾尽头，存在于一切逻辑失效的彼岸。是生者永恒的眺望，亦是归途最终的定格。',
       avatarAlt: '李子腾的 GitHub 头像',
       quickLinks: [
         { label: '浏览项目', href: '#projects' },
@@ -161,6 +164,13 @@ const copy = {
       'gist-ledger': '以私有 GitHub Gist 为云端数据源的无后端个人账本，兼顾预算、统计与多端同步。',
       puretools: '轻量、隐私优先的纯前端开发者工具箱，让常用处理尽可能留在本地浏览器。',
       n2api: '个人自托管的 AI API 与账号网关，统一 OAuth 账号和 API-key 上游为 OpenAI-compatible API。',
+    },
+    projectImageAlts: {
+      'sing-box-vps': 'sing-box-vps 终端管理菜单',
+      subman: 'SubMan 订阅工作台界面',
+      'gist-ledger': 'gist-ledger 登录界面',
+      puretools: 'PureTools 开发者工具箱首页',
+      n2api: 'N2API 管理界面',
     },
     serviceDetails: {
       puretools: { type: '开发者工具', description: '浏览器内完成常用开发与文本处理。' },
@@ -209,6 +219,8 @@ const copy = {
       role: 'A pseudo full-stack developer kept honest by AI agents.',
       summary:
         'Building practical products, tools, and services across the browser, terminal, and self-hosted infrastructure.',
+      signature:
+        'Hidden at the edge of the mist, beyond where all logic fails. The living\'s eternal gaze, and the final frame of the journey home.',
       avatarAlt: "Ziteng Li's GitHub avatar",
       quickLinks: [
         { label: 'Explore projects', href: '#projects' },
@@ -250,6 +262,13 @@ const copy = {
       puretools: 'A lightweight, privacy-first developer toolbox that keeps routine processing in the local browser.',
       n2api: 'A self-hosted AI account and API gateway that exposes OAuth and API-key upstreams through one compatible API.',
     },
+    projectImageAlts: {
+      'sing-box-vps': 'sing-box-vps terminal management menu',
+      subman: 'SubMan subscription workspace interface',
+      'gist-ledger': 'gist-ledger sign-in interface',
+      puretools: 'PureTools developer toolbox homepage',
+      n2api: 'N2API administration interface',
+    },
     serviceDetails: {
       puretools: { type: 'Developer tools', description: 'Everyday developer and text utilities in the browser.' },
       subman: { type: 'Subscriptions', description: 'Manage, aggregate, and publish proxy subscriptions.' },
@@ -285,6 +304,7 @@ export function getSiteContent(language) {
     projects: projectSources.map((project) => ({
       ...project,
       description: languageCopy.projectDescriptions[project.id],
+      imageAlt: languageCopy.projectImageAlts[project.id],
     })),
     services: serviceSources.map((service) => ({
       ...service,

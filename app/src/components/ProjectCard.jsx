@@ -7,7 +7,7 @@ function ProjectCard({ action, index, project }) {
         {project.image ? (
           <div className="project-card__media">
             <img
-              alt={`${project.name} interface preview`}
+              alt={project.imageAlt}
               loading="lazy"
               src={project.image}
             />

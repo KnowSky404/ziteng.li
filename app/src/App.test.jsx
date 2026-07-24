@@ -19,6 +19,11 @@ test('renders the Chinese personal homepage with all supplied projects and servi
   expect(
     screen.getByText('AI 时代，被智能体鞭策的伪全栈开发者'),
   ).toBeInTheDocument()
+  expect(
+    screen.getByText(
+      '隐于迷雾尽头，存在于一切逻辑失效的彼岸。是生者永恒的眺望，亦是归途最终的定格。',
+    ),
+  ).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: '正在构建' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: '在线服务' })).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: '写作与记录' })).toBeInTheDocument()
@@ -35,6 +40,9 @@ test('renders the Chinese personal homepage with all supplied projects and servi
   expect(
     screen.getByRole('link', { name: /sing-box-vps/i }),
   ).toHaveAttribute('href', 'https://github.com/KnowSky404/sing-box-vps')
+  expect(
+    screen.getByRole('img', { name: 'sing-box-vps 终端管理菜单' }),
+  ).toHaveAttribute('src', '/media/sing-box-vps.png')
   expect(screen.getByRole('link', { name: /komari 探针/i })).toHaveAttribute(
     'href',
     'https://tz.knowsky.info/',
@@ -75,6 +83,11 @@ test('switches the complete page copy to English and updates document language',
     screen.getByRole('navigation', { name: 'Primary navigation' }),
   ).toBeInTheDocument()
   expect(screen.getByRole('heading', { name: 'Building now' })).toBeInTheDocument()
+  expect(
+    screen.getByText(
+      "Hidden at the edge of the mist, beyond where all logic fails. The living's eternal gaze, and the final frame of the journey home.",
+    ),
+  ).toBeInTheDocument()
   expect(document.documentElement).toHaveAttribute('lang', 'en')
   expect(window.localStorage.getItem('ziteng.li.language')).toBe('en')
 })
